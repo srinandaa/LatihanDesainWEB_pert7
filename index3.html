@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+        Nama  : Sri Nanda Ameliani
+        NIM   : 2008196
+        Kelas : Ilmu Komputer - KOM-4C2
+    -->
+    <head>
+        <meta charset = "UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+        <title>Soal 1 - Latihan Javascript Desain WEB - Sri Nanda Ameliani</title>
+    </head>
+
+    <body>
+
+        <button onclick="input()">Input Data</button>
+        <button onclick="change()">Change Colour</button>
+        <button onclick="undo()">Undo Colour</button>
+
+        <div id = "output">
+        </div>
+
+        <script>
+            function input(){
+                var matkul = [];
+                var nama = prompt("Masukan Nama:", "");
+                var nim = prompt("Masukan NIM:", "");
+                matkul[0] = prompt("Masukan Nilai DPBO (3 sks):", "");
+                matkul[1] = prompt("Masukan Nilai Big Data (3 sks)", "");
+                matkul[2] = prompt("Masukan Nilai Sistem Kontrol (3 sks)", "");
+                matkul[3] = prompt("Masukan Nilai Proyek Konsultasi (3 sks)", "");
+                matkul[4] = prompt("Masukan Nilai RPL (3 sks)", "");
+                matkul[5] = prompt("Masukan Nilai Metodologi Penelitian(3 sks)", "");
+                matkul[6] = prompt("Masukan Nilai Sistem Operasi (3 sks)", "");
+                matkul[7] = prompt("Masukan Nilai Desain WEB (3 sks)", "");
+
+                var ip = 0;
+                for (let i = 0; i < 8; i++) {
+                    ip += bobotIp(matkul[i]);
+                }
+
+                document.getElementById("output").innerHTML = "Nama mahasiswa " + nama + " dengan NIM " + nim + " memperoleh IP "+  (ip/24);
+            }
+
+            function bobotIp(nilai){
+                var bobot;
+                if(nilai <= 100 && nilai >= 85) bobot = 4;
+                else if(nilai <= 84.99 && nilai >= 80) bobot = 3.7;
+                else if(nilai <= 79.99 && nilai >= 75) bobot = 3.3;
+                else if(nilai <= 74.99 && nilai >= 70) bobot = 3.0;
+                else if(nilai <= 69.99 && nilai >= 65) bobot = 2.7;
+                else if(nilai <= 64.99 && nilai >= 60) bobot = 2.3;
+                else if(nilai <= 59.99 && nilai >= 55) bobot = 2.0;
+                else if(nilai <= 54.99 && nilai >= 45) bobot = 1.0;
+                else if(nilai <= 44.99 && nilai >= 0) bobot = 0;
+
+                return bobot*3;
+            }
+
+            function change(){
+                var colour = prompt("Enter a colour:", "");
+
+                document.body.style.background = colour;
+            }
+
+            function undo(){
+                document.body.style.background = 'none';
+            }
+
+        </script>
+    </body>
+</html>
