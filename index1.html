@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+        Nama  : Sri Nanda Ameliani
+        NIM   : 2008196
+        Kelas : Ilmu Komputer - KOM-4C2
+    -->
+    <head>
+        <meta charset = "UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+        <title>Soal 1 - Latihan Javascript Desain WEB - Sri Nanda Ameliani</title>
+    </head>
+
+    <body>
+        <h1 id = "soal1" style = "text-align: center;"></h1>
+        <script>
+            var time = prompt("Jam berapa sekarang?", "");
+            var ucapan = document.getElementById("soal1");
+            if(time >=1 && time <=5){
+                ucapan.innerText = "Selamat Tidur";
+            }else if(time >=6 && time <=10){
+                ucapan.innerText = "Selamat Pagi";
+            }else if(time >=11 && time <=14){
+                ucapan.innerText = "Selamat Siang";
+            }else if(time >=15 && time <=17){
+                ucapan.innerText = "Selamat Sore";
+            }else if(time >=18 && time <=24){
+                ucapan.innerText = "Selamat Malam";
+            }
+        </script>
+    </body>
+</html>
